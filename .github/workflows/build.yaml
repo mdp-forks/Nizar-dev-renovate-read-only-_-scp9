@@ -1,0 +1,17 @@
+name: My GitHub Action
+
+on: 
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: My Step
+      run: echo "My Step has completed."
+    - name: Set output
+      #run: echo "::set-output name={conclusion}::{neutral}"#
+      run: echo "{set-output}={conclusion}" >> $GITHUB_OUTPUT
